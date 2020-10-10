@@ -69,6 +69,16 @@ h2 {
     box-shadow: $bs;
     transform: scale(1.2);
   }
+
+  &--accent {
+    background: $white;
+    color: $clr-accent;
+
+    &:hover {
+      background: $dark-gray;
+      color: $white;
+    }
+  }
 }
 
 // pricing table

@@ -40,6 +40,16 @@ h2 {
           transform: scale(1.2);
 }
 
+.button--accent {
+  background: #fff;
+  color: #72b01d;
+}
+
+.button--accent:hover {
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+}
+
 .pricing {
   text-align: center;
   padding: 100px 0;
