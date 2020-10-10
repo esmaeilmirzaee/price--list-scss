@@ -2,7 +2,7 @@
 
 // colours
 $white: #fff;
-$light-gray: rgba(0, 0, 0, 0.35);
+$light-gray: rgba(0, 0, 0, 0.1);
 $dark-gray: rgba(0, 0, 0, 0.5);
 $green: #72b01d;
 
@@ -28,3 +28,116 @@ $ls: 5px;
 // helpers
 $spacer: 1rem;
 $bs: 0 0 $spacer $light-gray; // box-shadow
+
+// General
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: $ff;
+  font-size: $fs-body;
+  color: $clr-body;
+}
+
+h2 {
+  font-size: $fs-h2;
+  color: $clr-heading;
+  letter-spacing: $ls;
+  text-transform: uppercase;
+}
+
+// Buttons
+.button {
+  display: inline-block;
+  padding: ($spacer * 1.5) ($spacer * 2.5);
+  background: $dark-gray;
+  text: {
+    transform: uppercase;
+    decoration: none;
+  }
+  font-weight: $fw-b;
+  font-size: $fs-sm;
+  letter-spacing: $ls;
+  color: $white;
+  transition: all ease-out 200ms;
+
+  &:hover {
+    background-color: $clr-accent;
+    box-shadow: $bs;
+    transform: scale(1.2);
+  }
+}
+
+// pricing table
+.pricing {
+  text-align: center;
+  padding: 100px 0;
+}
+
+.prices {
+  width: 95%;
+  max-width: 1200px;
+  margin: 100px auto;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.price {
+  background: $white;
+  box-shadow: $bs;
+  padding: 4 * $spacer;
+
+  & + & {
+    margin-left: $spacer;
+  }
+
+  &__title {
+    color: $clr-heading;
+    letter-spacing: $ls;
+    text-transform: uppercase;
+  }
+
+  &__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  &__list-item {
+    &:not(:last-of-type)::after {
+      content: '';
+      display: block;
+      height: 1px;
+      background: $light-gray;
+      margin: ($spacer * 2) 0;
+    }
+  }
+
+  &__cost {
+    font-size: $fs-xl;
+    font-weight: $fw-b;
+    color: $clr-accent;
+
+    span {
+      font: {
+        size: $fs-body;
+        weight: $fw-l;
+      }
+    }
+  }
+
+  &--accent {
+    background-color: $clr-accent;
+    padding-top: $spacer * 8;
+    oaddubg-bottom: $spacer * 8;
+    margin-top: $spacer * -3;
+    & .price__title,
+    & .price__cost {
+      color: $white;
+    }
+  }
+}
